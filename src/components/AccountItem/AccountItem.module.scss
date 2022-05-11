@@ -1,0 +1,53 @@
+.wrapper {
+    height: 60px;
+    width: 354px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+}
+
+.wrapper_avatar {
+    margin-right: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    h4 {
+        font-weight: 500;
+        font-size: 1.6rem;
+        margin-right: 2px;
+    }
+}
+
+.wrapper_icon {
+    margin-left: 4px;
+}
+
+.icon {
+    color: rgb(32, 213, 236);
+    font-size: 1.4rem;
+}
+
+.userName {
+    font-size: 1.4rem;
+    font-weight: 200;
+    color: rgb(167, 167, 167);
+}
