@@ -10,8 +10,8 @@ function AcountItem() {
             <span className={cx('wrapper_avatar')}>
                 <img
                     className={cx('avatar')}
-                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_300x300.webp?x-expires=1652338800&x-signature=spQiXFqiGoHX9UEo2d3%2BuSgK0y0%3D"
-                    alt="test1"
+                    src="https://i.pinimg.com/564x/9a/fd/cf/9afdcf1c97ced76d8035c9bbb891fa79.jpg"
+                    alt=""
                 />
             </span>
             <div className={cx('info')}>
