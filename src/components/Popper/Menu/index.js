@@ -34,8 +34,12 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     return (
         <TippyHeadeless
             delay={[0, 800]}
+            offset={[4, 3]}
             interactive={true}
             placement="bottom-end"
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
@@ -43,7 +47,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                             <Header
                                 title="Language"
                                 onBack={() => {
-                                    setHistory((prev) => setHistory(prev.splice(0, prev.length - 1)));
+                                    setHistory((prev) => prev.splice(0, prev.length - 1));
                                 }}
                             />
                         )}

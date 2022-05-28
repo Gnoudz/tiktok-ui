@@ -104,6 +104,29 @@
     }
 }
 
+.action {
+    display: inline-flex;
+    align-items: center;
+}
+.action-btn {
+    height: 32px;
+    width: 32px;
+    margin-left: 16px;
+    padding: 4px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.user-avatar {
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #909195;
+    cursor: pointer;
+}
+
 .more-btn {
     font-size: 2rem;
     margin-left: 12px;
