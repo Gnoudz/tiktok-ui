@@ -13,6 +13,7 @@ function Button({
     disabled = false,
     rounded = false,
     outline = false,
+    outlineNoneColor = false,
     small = false,
     large = false,
     className = false,
@@ -41,6 +42,7 @@ function Button({
     const style = {
         primary,
         outline,
+        outlineNoneColor,
         text,
         disabled,
         rounded,
@@ -68,7 +70,6 @@ function Button({
             [className]: className,
         },
     );
-
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
