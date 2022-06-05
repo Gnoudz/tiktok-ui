@@ -1,6 +1,6 @@
 .wrapper {
-    height: 60px;
-    width: 354px;
+    height: 62px;
+    width: 361px;
     padding: 9px 16px;
     display: flex;
     align-items: center;
@@ -8,6 +8,7 @@
         background-color: rgba(22, 24, 35, 0.03);
         cursor: pointer;
     }
+    overflow: hidden;
 }
 
 .wrapper_avatar {

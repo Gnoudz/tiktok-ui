@@ -3,28 +3,25 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 import Image from '../images';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
-function AcountItem() {
+function AcountItem({ data }) {
     return (
-        <div className={cx('wrapper')}>
+        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
             <span className={cx('wrapper_avatar')}>
-                <Image
-                    className={cx('avatar')}
-                    src="https://i.pinimg.com/564x/9a/fd/cf/9afdcf1c97ced76d8035c9bbb891fa79.jpg"
-                    alt=""
-                />
+                <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
             </span>
             <div className={cx('info')}>
                 <p className={cx('name')}>
-                    <h4>Đồng Minh Dương</h4>
+                    <h4>{data.full_name}</h4>
                     <span className={cx('wrapper_icon')}>
-                        <FontAwesomeIcon icon={faCircleCheck} className={cx('icon')} />
+                        {data.tick && <FontAwesomeIcon icon={faCircleCheck} className={cx('icon')} />}
                     </span>
                 </p>
-                <span className={cx('userName')}>Gnoud</span>
+                <span className={cx('userName')}>{data.nickname}</span>
             </div>
-        </div>
+        </Link>
     );
 }
 

@@ -129,7 +129,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://i.pinimg.com/736x/27/56/65/275665d95484dd5cc80572a15dcbe403.jp"
+                                src="https://graph.facebook.com/1426815194369454/picture?width=400&height=400"
                                 alt=""
                             />
                         ) : (
