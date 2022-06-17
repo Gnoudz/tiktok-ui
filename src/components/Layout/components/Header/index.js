@@ -7,7 +7,10 @@ import Tippy from '@tippyjs/react';
 // Import Style
 import className from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
+
 // Import thư mục trong dự án
+
 import images from '~/asset/images';
 import Button from '~/components/Button';
 import {
@@ -26,6 +29,7 @@ import Image from '~/components/images';
 import Menu from '~/components/Popper/Menu';
 import Search from '../Search/';
 import styles from './Header.module.scss';
+import routesConfig from '~/config/routes';
 
 const cx = className.bind(styles);
 
@@ -93,9 +97,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
-                </div>
+                </Link>
 
                 <Search />
 
@@ -106,14 +110,15 @@ function Header() {
                                 Upload
                             </Button>
 
-                            <Tippy content="Message">
+                            <Tippy delay={[0, 50]} content="Message" placement="bottom">
                                 <button className={cx('action-btn', 'message-btn')}>
                                     <MessageIcon width="2.6rem" height="2.6rem" className={cx('MessageIcon')} />
                                 </button>
                             </Tippy>
-                            <Tippy content="Inbox">
+                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>

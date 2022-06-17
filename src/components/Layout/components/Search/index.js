@@ -50,8 +50,9 @@ function Search() {
     };
 
     const handleSpace = (e) => {
-        if (e.target.value[0] !== ' ') {
-            setSearchValue(e.target.value);
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
         }
     };
     return (
@@ -89,7 +90,7 @@ function Search() {
                 )}
                 {loading && <LoadingIcon height="1.6rem" width="1.6rem" className={cx('loading-icon')} />}
                 <span />
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </div>

@@ -8,6 +8,7 @@
     --width-default: 1150px;
     --height-default: 60px;
     --box-shadow-default: 0px 1px 1px rgb(0 0 0 / 12%);
+    --font-family: 'ProximaNova', sans-serif;
 
     --width-sidebar-default: 348px;
 }
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;

@@ -9,7 +9,7 @@ import { useState } from 'react';
 const cx = classNames.bind(style);
 
 const defaultFn = () => {};
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = () => {
@@ -33,6 +33,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     };
     return (
         <TippyHeadeless
+            hideOnClick={hideOnClick}
             delay={[0, 800]}
             offset={[4, 3]}
             interactive={true}
