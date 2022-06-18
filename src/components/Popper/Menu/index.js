@@ -12,6 +12,7 @@ const defaultFn = () => {};
 function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
+
     const renderItems = () => {
         return current.data.map((item, index) => {
             const isParent = !!item.children;
@@ -33,14 +34,11 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
     };
     return (
         <TippyHeadeless
-            hideOnClick={hideOnClick}
+            interactive
             delay={[0, 800]}
             offset={[4, 3]}
-            interactive={true}
+            hideOnClick={hideOnClick}
             placement="bottom-end"
-            onHide={() => {
-                setHistory((prev) => prev.slice(0, 1));
-            }}
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
@@ -48,14 +46,17 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                             <Header
                                 title="Language"
                                 onBack={() => {
-                                    setHistory((prev) => prev.splice(0, prev.length - 1));
+                                    setHistory((prev) => prev.slice(0, prev.length - 1));
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
         >
             {children}
         </TippyHeadeless>

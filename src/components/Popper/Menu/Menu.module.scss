@@ -15,6 +15,10 @@
     margin-left: 8px;
 }
 
+.menu-body {
+    overflow-y: auto;
+}
+
 // menu iteam
 .menu-item {
     width: 100%;
@@ -36,6 +40,7 @@
     height: 50px;
     width: 100%;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 .header-btn {
     background-color: transparent;

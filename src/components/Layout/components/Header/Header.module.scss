@@ -4,6 +4,13 @@
     --search-space-top: 9px;
     width: 100%;
     height: var(--height-default);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: var(--white);
+
     display: flex;
     justify-content: center;
     box-shadow: var(--box-shadow-default);
