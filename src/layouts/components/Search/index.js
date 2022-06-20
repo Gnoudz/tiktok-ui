@@ -8,7 +8,7 @@ import AcountItem from '~/components/AccountItem';
 import { LoadingIcon, SearchIcon, ClearIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/components/hooks';
-import * as searchService from '~/apiService/searchService';
+import * as searchService from '~/services/searchService';
 const cx = classNames.bind(styles);
 function Search() {
     const [searchResult, setSearchResult] = useState([]);
