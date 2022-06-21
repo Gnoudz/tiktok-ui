@@ -7,33 +7,33 @@ import styles from './Search.module.scss';
 import AcountItem from '~/components/AccountItem';
 import { LoadingIcon, SearchIcon, ClearIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import { useDebounce } from '~/components/hooks';
+import { useDebounce } from '~/hooks';
 import * as searchService from '~/services/searchService';
 const cx = classNames.bind(styles);
 function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [searchValue, setSearchValue] = useState('');
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
     const inputRef = useRef();
 
-    const debounce = useDebounce(searchValue, 500);
+    const debounceValue = useDebounce(searchValue, 500);
     useEffect(() => {
-        if (!debounce.trim()) {
+        if (!debounceValue.trim()) {
             setSearchResult([]);
             return;
         }
 
         const fetchApi = async () => {
             setLoading(true);
-            const result = await searchService.search(debounce);
+            const result = await searchService.search(debounceValue);
 
             setSearchResult(result);
             setLoading(false);
         };
 
         fetchApi();
-    }, [debounce]);
+    }, [debounceValue]);
 
     const handleClear = () => {
         setSearchValue('');
