@@ -5,7 +5,7 @@ import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
 import Profile from '~/pages/Profile';
-
+import Live from '~/pages/Live';
 import config from '~/config';
 // Public routes
 const publicRoutes = [
@@ -30,6 +30,10 @@ const publicRoutes = [
         path: config.routes.upload,
         component: Upload,
         Layout: HeaderOnly,
+    },
+    {
+        path: config.routes.live,
+        component: Live,
     },
 ];
 
